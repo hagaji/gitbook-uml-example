@@ -12,7 +12,9 @@ jobs:
       - name: Run npm install
         run: npm install
       - name: Run Gitbook install
-        run: gitbook install
+        run: |
+          npm install gitbook-cli
+          gitbook install
       - name: Run Gitbook Build
         run: gitbook build
       - name: Check Build File
