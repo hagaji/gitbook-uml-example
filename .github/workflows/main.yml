@@ -9,16 +9,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Run Gitbook Global install
-        run: |
-          npm install -g gitbook-cli
       - name: Run npm install
         run: npm install
       - name: Run Gitbook install
         run: |
-          gitbook install
+          npx gitbook install
       - name: Run Gitbook Build
-        run: gitbook build
+        run: |
+          npx gitbook build
       - name: Check Build File
         run: |
           cd _book
