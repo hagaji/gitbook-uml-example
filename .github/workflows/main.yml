@@ -9,9 +9,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Run a one-line script
-        run: echo Hello, world!
-      - name: Run a multi-line script
+      - name: Run npm install
+        run: npm install
+      - name: Run Gitbook install
+        run: gitbook install
+      - name: Run Gitbook Build
+        run: gitbook build
+      - name: Check Build File
         run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+          cd _book
+          ls -la
